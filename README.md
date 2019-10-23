@@ -1,42 +1,154 @@
-# [Academic Kickstart](https://sourcethemes.com/academic/)
+# Wayne Lab, UCLA
 
-**Academic** makes it easy to create a beautiful website for free using Markdown, Jupyter, or RStudio. Customize anything on your site with widgets, themes, and language packs. [Check out the latest demo](https://academic-demo.netlify.com/) of what you'll get in less than 10 minutes, or [view the showcase](https://sourcethemes.com/academic/#expo).
+This is the repo for Wayne Lab website.
 
-**Academic Kickstart** provides a minimal template to kickstart your new website.
+The site is created with [Academic Kickstart](https://sourcethemes.com/academic/), a static site generator written in
+[Go](http://golang.org). People write the content using Markdown, and
+Hugo will convert the Markdown content into HTML.
 
-- [**Get Started**](#install)
-- [View the documentation](https://sourcethemes.com/academic/docs/)
-- [Ask a question](http://discuss.gohugo.io/)
-- [Request a feature or report a bug](https://github.com/gcushen/hugo-academic/issues)
-- Updating? View the [Update Guide](https://sourcethemes.com/academic/docs/update/) and [Release Notes](https://sourcethemes.com/academic/updates/)
-- Support development of Academic:
-  - [Donate a coffee](https://paypal.me/cushen)
-  - [Become a backer on Patreon](https://www.patreon.com/cushen)
-  - [Decorate your laptop or journal with an Academic sticker](https://www.redbubble.com/people/neutreno/works/34387919-academic)
-  - [Wear the T-shirt](https://academic.threadless.com/)
+## Updating the site
 
-[![Screenshot](https://raw.githubusercontent.com/gcushen/hugo-academic/master/academic.png)](https://github.com/gcushen/hugo-academic/)
+1. Clone this repo.
+2. Use a text editor such as Atom or VS Code to edit the files. See the
+   [Add and edit](#add-and-edit-pages) section for more details.
+   1. If you want to run the site on your computer to preview the changes, see the
+      [Start local server](#start-local-server) section for more details.
+3. Commit the changes and push them to master branch on Github.
+4. The site will be automatically updated.
 
-## Install
+## Start local server
 
-You can choose from one of the following four methods to install:
+### RStudio version
 
-* [**one-click install using your web browser (recommended)**](https://sourcethemes.com/academic/docs/install/#install-with-web-browser)
-* [install on your computer using **Git** with the Command Prompt/Terminal app](https://sourcethemes.com/academic/docs/install/#install-with-git)
-* [install on your computer by downloading the **ZIP files**](https://sourcethemes.com/academic/docs/install/#install-with-zip)
-* [install on your computer with **RStudio**](https://sourcethemes.com/academic/docs/install/#install-with-rstudio)
+1. Open RStudio and install `blogdown`
 
-Then [personalize your new site](https://sourcethemes.com/academic/docs/get-started/).
+```R
+install.packages("blogdown")
+blogdown::install_hugo(force = TRUE)
+```
 
-## Ecosystem
+2. In the RStudio menu bar, choose Addins > blogdown Serve Site (clicking this will call blogdown:::serve_site())
 
-* **[Academic Admin](https://github.com/sourcethemes/academic-admin):** An admin tool to import publications from BibTeX or import assets for an offline site
-* **[Academic Scripts](https://github.com/sourcethemes/academic-scripts):** Scripts to help migrate content to new versions of Academic
+3. Paste the URL (e.g. http://127.0.0.1) into your web browser.
 
-## License
+### Golang version
 
-Copyright 2017-present [George Cushen](https://georgecushen.com).
+1. Install [Go](http://golang.org).
+2. Install [Hugo](https://gohugo.io) on MacOS.
 
-Released under the [MIT](https://github.com/sourcethemes/academic-kickstart/blob/master/LICENSE.md) license.
+```
+brew install hugo
+```
 
-[![Analytics](https://ga-beacon.appspot.com/UA-78646709-2/academic-kickstart/readme?pixel)](https://github.com/igrigorik/ga-beacon)
+3. Start server
+
+```
+hugo server
+```
+
+3. Paste the URL (e.g. http://localhost:1313) into your web browser.
+
+## Add and edit pages
+
+`base_templates` directory has examples files that you can copy and edit.
+
+`config` contains configuration files for the site.
+
+`content` directory has the content for the various pages.
+
+- Most of your changes will go in this directory.
+- The content is written in Markdown and LaTeX math. Vist
+  Academic's [Writing Content](https://sourcethemes.com/academic/docs/writing-markdown-latex/) page more details.
+- At the top of the page, there is some metadata between two rows of `---`.
+  After the metadata (AKA Front Matter), you place the rest of the content for the page.
+
+```
+---
+title: My first blog post
+date: 2017-12-01
+---
+
+Esse officia voluptate excepteur ea culpa quis.
+```
+
+`static` directory is for images and files.
+
+### 1. Contact
+
+Edit the `/config/params.toml` file, `Contact details` section.
+
+### 2. Donate
+
+Edit the `content/donate.md` file.
+
+### 3. Home page
+
+The items on the home page are in `content/home`.
+
+**A. Projects** (content/home/featured_projects.md)
+
+Any project in `/content/projects/` with `featured: true` will be shown
+on the home page.
+
+**B. News** (content/home/news.md)
+
+The latest 3 news items in `content/news` will be shown on the home page.
+
+### 4. News
+
+1. To add a new news item, create a directory with the item's name in `content/news`.
+
+- Each directory must have an unique name.
+- Use `-`, not spaces for the news item name.
+
+```bash
+content/news/new-news
+```
+
+2. Add a file `index.md`to the new directory. If you want the news item to have
+   an image, add `featured.jpg`.
+
+3. Copy `base_templates/news/news-name/index.md` into `index.md`, and
+   edit the contents.
+
+### 5. People
+
+1. To add a new person, create a directory with the user's username in `content/authors`.
+
+- Each directory have an unique username.
+- Use `-`, not spaces for the username.
+
+```bash
+content/authors/new-user
+```
+
+2. Add a file `_index.md` to the new directory. If you want the person to have an
+   image, add `avatar.jpg`.
+
+3. Copy `base_templates/authors/user-name/_index.md` into `_index.md`, and edit the
+   contents.
+
+### 6. Projects
+
+1. To add a new project, create a directory with the project's name in `content/projects`.
+
+- Each directory must have an unique name.
+- Use `-`, not spaces for the project name.
+
+```bash
+content/projects/new-project
+```
+
+2. Add a file `index.md`to the new directory. If you want the project to have
+   an image, add `featured.jpg`.
+
+3. Copy `base_templates/projects/project-name/index.md` into `index.md`, and
+   edit the contents.
+
+### 7. Publications
+
+Edit the `content/publications.md` file.
+
+### 8. Resources
+
+Edit the `content/resources.md` file.
