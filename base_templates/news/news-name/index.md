@@ -1,0 +1,10 @@
+---
+title: News 1
+summary: Dolore non voluptate aute veniam ex irure duis. Dolore non voluptate aute veniam ex irure duis.
+date: 2017-12-01
+
+# You can add tags to the news. If there are no tags , use [].
+tags: [tag 1, tag 2]
+---
+
+Ea fugiat excepteur ad ullamco elit incididunt aute adipisicing. Tempor dolore dolor tempor est laboris nisi eiusmod amet qui exercitation. Laboris eiusmod laboris nostrud ex elit tempor tempor ullamco magna eu ad quis ut excepteur. Adipisicing cillum fugiat aute excepteur. Excepteur culpa consequat quis mollit ex occaecat fugiat ipsum magna eu aute nisi enim pariatur.
