@@ -79,6 +79,10 @@ h3.article-title {
   font-size: 1.25rem;
 }
 
+.big-icon {
+  font-size: 1.25rem;
+}
+
 /* ================
  home page
 ================ */
@@ -121,4 +125,22 @@ h3.article-title {
 
 .card .card-text p {
   font-size: 1em;
+}
+
+/* ================
+ people
+================ */
+
+.person-heading {
+  h1,
+  h2,
+  h3 {
+    margin: 0;
+  }
+
+  margin-bottom: 1em;
+}
+
+.people-widget {
+  font-size: 1rem;
 }
