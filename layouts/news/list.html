@@ -1,0 +1,18 @@
+{{/* NOTE: add compact partial */}}
+
+{{- define "main" -}}
+
+{{ partial "page_header.html" . }}
+
+<div class="universal-wrapper">
+  {{ $paginator := .Paginate .Data.Pages }}
+  {{ range $paginator.Pages }}
+
+  {{ partial "li_compact" . }}
+   <hr>
+  {{ end }}
+
+  {{ partial "pagination" . }}
+</div>
+
+{{- end -}}
