@@ -1,27 +1,36 @@
-{{/* NOTE: remove container class from footer */}}
+{{/*
+  NOTE: remove class and div from footer, add main-wrapper, add class to <body>
+  to make sticky footer work;
+  move javascript to bottom of body;
+*/}}
 
 <!DOCTYPE html>
 <html lang="{{ site.LanguageCode | default "en-us" }}">
 
 {{ partial "site_head" . }}
-<body id="top" data-spy="scroll" data-offset="70" data-target="{{ if or .IsHome (eq .Type "widget_page") }}#navbar-main{{else}}#TableOfContents{{end}}" {{ if not (.Scratch.Get "light") }}class="dark"{{end}}>
+<body id="top" data-spy="scroll" data-offset="70"
+  data-target="{{ if or .IsHome (eq .Type "widget_page") }}#navbar-main{{else}}#TableOfContents{{end}}"
+  {{ if not (.Scratch.Get "light") }}class="dark"{{end}}
+  class="{{if .IsHome}}home{{else}}{{.Type}}{{end}}-body"
+>
 
-  {{ partial "search" . }}
+  <div id="main-wrapper">
+    {{ partial "search" . }}
 
-  {{ partial "navbar" . }}
+    {{ partial "navbar" . }}
 
-  {{ block "main" . }}{{ end }}
+    <div id="content-wrapper">
+      {{ block "main" . }}{{ end }}
+    </div>
 
-  {{ partial "site_js" . }}
-
-  {{/* Docs and Updates layouts include the site footer in a different location. */}}
-  {{ if not (in (slice "docs" "updates") .Type) }}
-  <div>
+    {{/* Docs and Updates layouts include the site footer in a different location. */}}
+    {{ if not (in (slice "docs" "updates") .Type) }}
     {{ partial "site_footer" . }}
+    {{ end }}
   </div>
-  {{ end }}
 
   {{ partial "citation" . }}
 
+  {{ partial "site_js" . }}
 </body>
 </html>
