@@ -1,11 +1,11 @@
 +++
 
-widget = "blank"
+widget = "hero"
 headless = true
 active = true
 weight = 50
 
-title = "Support Our Lab"
+title = "Support Our Research"
 
 [design]
   # Choose how many columns the section has. Valid values: 1 or 2.
@@ -15,11 +15,15 @@ title = "Support Our Lab"
   # Customize the section spacing. Order is top, right, bottom, left.
   padding = ["35px", "0", "40px", "0"]
 
+[cta]
+  url = "/donate/"
+  label = "Donate"
+  icon_pack = "fas"
+  icon = ""
+
 [advanced]
  # CSS class.
- css_class = "wg-donate"
+ css_class = "home-donate"
 +++
 
-Help us address ecological and evolutionary questions. Join our donor community.
-
-<a href="/donate/" class="btn btn-primary btn-lg">Donate</a>
+Help us address ecological and evolutionary questions. Incididunt pariatur ipsum velit sint.

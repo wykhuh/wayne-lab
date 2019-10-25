@@ -1,0 +1,124 @@
+/* ================
+keep footer at bottom of page
+https://stackoverflow.com/a/20352949
+================ */
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#main-wrapper {
+  box-sizing: border-box;
+  min-height: 100%;
+  padding: 0 0 6em;
+  position: relative;
+}
+
+footer {
+  bottom: 0;
+  height: 6em;
+  position: absolute;
+  width: 100%;
+}
+
+#main-wrapper {
+  // background: coral;
+}
+
+.universal-wrapper {
+  // background: lightblue;
+}
+
+.article-container {
+  // background: lightpink;
+}
+
+article.article {
+  // background: lightslategrey;
+}
+
+/* ================
+ general
+================ */
+
+#content-wrapper {
+  padding-bottom: 3em;
+}
+
+footer {
+  background: rgba(0, 0, 0, 1);
+  color: #ccc;
+  a {
+    color: #ccc;
+  }
+  a:hover {
+    color: #fff;
+  }
+  p {
+    font-size: 1em;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+h3 {
+  font-weight: 400;
+}
+
+hr {
+  margin: 1.5em 0;
+  padding: 0;
+  background: #ddd;
+  background-image: none;
+}
+
+h3.article-title {
+  font-size: 1.25rem;
+}
+
+/* ================
+ home page
+================ */
+.home-body #content-wrapper {
+  padding-bottom: 0;
+}
+
+.site-hero {
+  min-height: 15em;
+  position: relative;
+  text-align: center;
+  .hero-title {
+    position: absolute;
+    bottom: 1em;
+  }
+}
+
+.hero-title {
+  font-size: 1.5rem;
+}
+
+#about_lab img {
+  display: inline;
+}
+
+.home-donate {
+  .hero-lead {
+    font-size: 1em;
+  }
+}
+
+/* ================
+ cards
+================ */
+.project-card {
+  &.project-item {
+    margin: 10px;
+  }
+}
+
+.card .card-text p {
+  font-size: 1em;
+}
