@@ -24,22 +24,6 @@ footer {
   width: 100%;
 }
 
-#main-wrapper {
-  // background: coral;
-}
-
-.universal-wrapper {
-  // background: lightblue;
-}
-
-.article-container {
-  // background: lightpink;
-}
-
-article.article {
-  // background: lightslategrey;
-}
-
 /* ================
  general
 ================ */
@@ -48,14 +32,18 @@ article.article {
   padding-bottom: 3em;
 }
 
+nav#navbar-main li.nav-item {
+  font-size: 1rem;
+}
+
 footer {
-  background: rgba(0, 0, 0, 1);
-  color: #ccc;
+  background: #3d74a9;
+  color: #fff;
   a {
-    color: #ccc;
+    color: #fff;
   }
   a:hover {
-    color: #fff;
+    color: #f2b845;
   }
   p {
     font-size: 1em;
@@ -90,18 +78,20 @@ h3.article-title {
   padding-bottom: 0;
 }
 
-.site-hero {
+.banner-image {
   min-height: 15em;
   position: relative;
   text-align: center;
+
   .hero-title {
     position: absolute;
     bottom: 1em;
+    font-size: 1.5rem;
   }
 }
 
 .hero-title {
-  font-size: 1.5rem;
+  font-size: 2.25rem;
 }
 
 #about_lab img {
