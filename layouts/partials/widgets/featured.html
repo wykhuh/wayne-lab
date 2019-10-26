@@ -1,6 +1,6 @@
 {{/*
   NOTE: replace 2 column layout with 1 column;
-  center header and list items
+  add .page-title;
 */}}
 
 {{/* Featured Content Widget */}}
@@ -37,14 +37,16 @@
 {{/* Limit */}}
 {{ $query = first $items_count $query }}
 
-<div class="text-center">
-  <h1>{{ with $st.Title }}{{ . | markdownify | emojify }}{{ end }}</h1>
+<div>
+  <h1 class="page-title">
+    {{ with $st.Title }}{{ . | markdownify | emojify }}{{ end }}
+  </h1>
   {{ with $st.Params.subtitle }}
   <p>{{ . | markdownify | emojify }}</p>
   {{ end }}
 </div>
 
-<div class="row justify-content-center">
+<div class="row">
   {{ with $st.Content }}{{ . }}{{ end }}
 
   {{ range $post := $query }}

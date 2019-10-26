@@ -28,9 +28,9 @@ subtitle = ""
   # Show user's interests? (true/false)
   show_interests = false
 
-[design.background]
-  # Background color.
-  color = "inherit"
+[design.spacing]
+  # Customize the section spacing. Order is top, right, bottom, left.
+  padding = ["0"]
 +++
 
 If you are interested in joining our lab, please [contact us](/contact/).

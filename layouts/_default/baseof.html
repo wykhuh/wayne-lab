@@ -2,6 +2,7 @@
   NOTE: remove class and div from footer, add main-wrapper, add class to <body>
   to make sticky footer work;
   move javascript to bottom of body;
+  add .container if not home;
 */}}
 
 <!DOCTYPE html>
@@ -19,7 +20,7 @@
 
     {{ partial "navbar" . }}
 
-    <div id="content-wrapper">
+    <div id="content-wrapper" class="{{if .IsHome}}{{else}}container{{end}}">
       {{ block "main" . }}{{ end }}
     </div>
 

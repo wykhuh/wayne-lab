@@ -35,7 +35,4 @@ subtitle = ""
   #   4 = Citation (publication only)
   view = 2
 
-[design.spacing]
-  # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["35px", "0", "60px", "0"]
 +++

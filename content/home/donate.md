@@ -11,10 +11,6 @@ title = "Support Our Research"
   # Choose how many columns the section has. Valid values: 1 or 2.
   columns = "1"
 
-[design.spacing]
-  # Customize the section spacing. Order is top, right, bottom, left.
-  padding = ["35px", "0", "40px", "0"]
-
 [cta]
   url = "/donate/"
   label = "Donate"

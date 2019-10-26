@@ -4,21 +4,19 @@
 
 {{ partial "page_header.html" . }}
 
-<div class="universal-wrapper">
-  <div class="row justify-content-center">
-    {{ with.Content }}
-    <div class="article-style">{{ . }}</div>
-    {{ end }}
+<div class="row pl-3 pr-3">
+  {{ with.Content }}
+  <div class="article-style">{{ . }}</div>
+  {{ end }}
 
-    {{ $paginator := .Paginate .Data.Pages }}
-    {{ range $paginator.Pages }}
+  {{ $paginator := .Paginate .Data.Pages }}
+  {{ range $paginator.Pages }}
 
-    {{ partial "li_card" . }}
+  {{ partial "li_card" . }}
 
-    {{ end }}
+  {{ end }}
 
-    {{ partial "pagination" . }}
-  </div>
+  {{ partial "pagination" . }}
 </div>
 
 {{- end -}}
